@@ -1,0 +1,73 @@
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-float-up {
+  animation: floatUp 0.8s ease-out forwards;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+.bg-grid-pattern {
+  background-size: 100px 100px;
+  background-image:
+    linear-gradient(to right, rgba(var(--foreground-rgb), 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(var(--foreground-rgb), 0.05) 1px, transparent 1px);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.product-screenshot {
+  transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+  box-shadow: 
+    0 50px 100px -20px rgba(0, 0, 0, 0.15),
+    0 30px 60px -30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.product-screenshot:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+}
+
+@media (prefers-reduced-motion) {
+  .product-screenshot {
+    transform: none;
+  }
+}
+
+/* Smooth hover effects */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(to right, #4f46e5, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-shift 3s ease-in-out infinite alternate;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+} 
